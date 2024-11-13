@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Mi Amor!</title>
+    <style>
+        /* Estilos de la página */
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', sans-serif;
+            color: #ff69b4;
+            background: linear-gradient(to bottom right, #ffd1dc, #ff9a9e, #f6a1a1);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            text-align: center;
+        }
+
+        /* Fondo decorativo de Hello Kitty */
+        .hello-kitty-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?cute,hello-kitty') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        /* Contenedor principal */
+        .container {
+            z-index: 2;
+            background: rgba(255, 245, 248, 0.95);
+            padding: 40px;
+            margin: 20px auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* Título */
+        h1 {
+            font-size: 3em;
+            color: #ff69b4;
+            text-shadow: 1px 1px 5px rgba(255, 182, 193, 0.8);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Decoración de Hello Kitty animada */
+        .kitty {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://source.unsplash.com/50x50/?hello-kitty') no-repeat center center/cover;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .kitty1 { top: -25px; left: 10%; }
+        .kitty2 { top: -25px; right: 10%; }
+        .kitty3 { bottom: -25px; left: 10%; }
+        .kitty4 { bottom: -25px; right: 10%; }
+
+        /* Decoración de corazones */
+        .heart-container {
+            position: absolute;
+            bottom: -10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .heart {
+            font-size: 2em;
+            color: #ff1493;
+            margin: 0 5px;
+            opacity: 0.8;
+            animation: float 2s ease-in-out infinite alternate;
+        }
+
+        .heart:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        /* Animación flotante */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+
+        /* Botón con resplandor */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            color: #fff;
+            background: #ff1493;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px #ff1493, 0 0 25px #ff69b4;
+        }
+
+        .btn:hover {
+            background: #ff85b3;
+            box-shadow: 0 0 20px #ff69b4, 0 0 30px #ff1493;
+        }
+
+        /* Galería de imágenes */
+        #gallery {
+            display: none;
+            background: #fdf2f8;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-radius: 15px;
+        }
+
+        #gallery h2 {
+            font-size: 2.5em;
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .images img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .images img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo decorativo de Hello Kitty -->
+    <div class="hello-kitty-bg"></div>
+
+    <!-- Tarjeta de cumpleaños -->
+    <div class="container">
+        <!-- Decoración de Hello Kitty alrededor de la tarjeta -->
+        <div class="kitty kitty1"></div>
+        <div class="kitty kitty2"></div>
+        <div class="kitty kitty3"></div>
+        <div class="kitty kitty4"></div>
+
+        <!-- Mensaje de cumpleaños -->
+        <h1>🎉 ¡Feliz Cumpleaños, Amor! 🎉</h1>
+        <p>Hoy celebro la existencia de la persona más especial en mi vida. Gracias por llenar mis días de luz y amor, y por hacerme sentir afortunado cada día. ¡Eres mi inspiración y mi alegría!</p>
+        <p>Espero que este día esté lleno de momentos mágicos, sorpresas hermosas y risas interminables. Te amo hoy y siempre. ❤️</p>
+        <button onclick="showGallery()" class="btn">Haz clic aquí para tu sorpresa 🎁</button>
+    </div>
+
+    <!-- Corazones flotantes -->
+    <div class="heart-container">
+        <span class="heart">❤️</span>
+        <span class="heart">💖</span>
+        <span class="heart">💝</span>
+        <span class="heart">💗</span>
+    </div>
+
+    <!-- Galería de imágenes, oculta hasta hacer clic -->
+    <section id="gallery">
+        <h2>Momentos Especiales</h2>
+        <div class="images">
+            <!-- Añadir imágenes de sorpresa -->
+            <img src="ALIII.jpeg" alt="Imagen 1">
+            <img src="LISITA.jpeg" alt="Imagen 2">
+            <img src="ALIIIIIIII.jpeg" alt="Imagen 3">
+            <img src="GATITOO.jpeg" alt="Imagen 4">
+            <img src="ALII.jpeg" alt="Imagen 5">
+            <img src="ALLALA.jpeg" alt="Imagen 6">
+        </div>
+    </section>
+
+    <script>
+        function showGallery() {
+            document.getElementById("gallery").style.display = "block";
+            document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
